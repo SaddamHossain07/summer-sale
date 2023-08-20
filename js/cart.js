@@ -43,9 +43,16 @@ function addToCart(target) {
     totalAmount.innerText = totals.toFixed(2)
     discountCalculation()
 
-    // activate make purchase btn 
-    if (totalPriceValue >= 200) {
+    // activate btn 
+    if (totalPriceValue > 0) {
         document.getElementById('make-purchase-btn').removeAttribute('disabled')
+    }
+    if (totalPriceValue >= 200) {
+        document.getElementById('apply-coupon-field').removeAttribute('disabled')
+        document.getElementById('apply-coupon-btn').removeAttribute('disabled')
     }
 }
 
+function refreshWindow() {
+    window.location = 'index.html'
+}
