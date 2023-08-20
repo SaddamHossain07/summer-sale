@@ -58,7 +58,7 @@
                     <div class="pt-20">
                         <h3 class="text-4xl font-semibold mb-8">Kitchenware</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                            <div class="card bg-base-100 shadow-2xl p-6 pb-0">
+                            <div class="card bg-base-100 shadow-2xl p-6 pb-0" onclick="addToCart(this)">
                                 <figure class="bg-zinc-200 py-8 min-h-[220px]"><img src="/images/prod1.png"
                                         alt="Shoes" /></figure>
                                 <div class="card-body items-center mb-0">
@@ -78,7 +78,7 @@
                                     <h3 class="text-xl">39.00 TK</h3>
                                 </div>
                             </div>
-                            <div class="card bg-base-100 shadow-2xl p-6 pb-0">
+                            <div class="card bg-base-100 shadow-2xl p-6 pb-0" onclick="addToCart(this)">
                                 <figure class="bg-zinc-200 py-8 min-h-[220px]"><img src="/images/prod2.png"
                                         alt="Shoes" /></figure>
                                 <div class="card-body items-center mb-0">
@@ -98,7 +98,7 @@
                                     <h3 class="text-xl">25.00 TK</h3>
                                 </div>
                             </div>
-                            <div class="card bg-base-100 shadow-2xl p-6 pb-0">
+                            <div class="card bg-base-100 shadow-2xl p-6 pb-0" onclick="addToCart(this)">
                                 <figure class="bg-zinc-200 py-8 min-h-[220px]"><img src="/images/prod3.png"
                                         alt="Shoes" /></figure>
                                 <div class="card-body items-center mb-0">
@@ -125,7 +125,7 @@
                     <div class="pt-20">
                         <h3 class="text-4xl font-semibold mb-8">Sportswear</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                            <div class="card bg-base-100 shadow-2xl p-6 pb-0">
+                            <div class="card bg-base-100 shadow-2xl p-6 pb-0" onclick="addToCart(this)">
                                 <figure class="bg-zinc-200 py-8 min-h-[220px]"><img src="/images/prod4.png"
                                         alt="Shoes" /></figure>
                                 <div class="card-body items-center mb-0">
@@ -145,7 +145,7 @@
                                     <h3 class="text-xl">49.00 TK</h3>
                                 </div>
                             </div>
-                            <div class="card bg-base-100 shadow-2xl p-6 pb-0">
+                            <div class="card bg-base-100 shadow-2xl p-6 pb-0" onclick="addToCart(this)">
                                 <figure class="bg-zinc-200 py-8 min-h-[220px]"><img src="/images/prod5.png"
                                         alt="Shoes" /></figure>
                                 <div class="card-body items-center mb-0">
@@ -165,7 +165,7 @@
                                     <h3 class="text-xl">69.00 TK</h3>
                                 </div>
                             </div>
-                            <div class="card bg-base-100 shadow-2xl p-6 pb-0">
+                            <div class="card bg-base-100 shadow-2xl p-6 pb-0" onclick="addToCart(this)">
                                 <figure class="bg-zinc-200 py-8 min-h-[220px]"><img src="/images/prod6.png"
                                         alt="Shoes" /></figure>
                                 <div class="card-body items-center mb-0">
@@ -192,7 +192,7 @@
                     <div class="pt-20">
                         <h3 class="text-4xl font-semibold mb-8">Furniture</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                            <div class="card bg-base-100 shadow-2xl p-6 pb-0">
+                            <div class="card bg-base-100 shadow-2xl p-6 pb-0" onclick="addToCart(this)">
                                 <figure class="bg-zinc-200 py-8 min-h-[220px]"><img src="/images/prod7.png"
                                         alt="Shoes" /></figure>
                                 <div class="card-body items-center mb-0">
@@ -212,7 +212,7 @@
                                     <h3 class="text-xl">185.00 TK</h3>
                                 </div>
                             </div>
-                            <div class="card bg-base-100 shadow-2xl p-6 pb-0">
+                            <div class="card bg-base-100 shadow-2xl p-6 pb-0" onclick="addToCart(this)">
                                 <figure class="bg-zinc-200 py-8 min-h-[220px]"><img src="/images/prod8.png"
                                         alt="Shoes" /></figure>
                                 <div class="card-body items-center mb-0">
@@ -232,7 +232,7 @@
                                     <h3 class="text-xl">299.00 TK</h3>
                                 </div>
                             </div>
-                            <div class="card bg-base-100 shadow-2xl p-6 pb-0">
+                            <div class="card bg-base-100 shadow-2xl p-6 pb-0" onclick="addToCart(this)">
                                 <figure class="bg-zinc-200 py-8 min-h-[220px]"><img src="/images/prod9.png"
                                         alt="Shoes" /></figure>
                                 <div class="card-body items-center mb-0">
@@ -263,8 +263,9 @@
                     <div class="rounded-lg bg-base-100 p-6 shadow-2xl mt-2">
                         <h3 class="text-2xl font-medium mb-4">Have coupon?</h3>
                         <div class="flex">
-                            <input class="p-4 rounded-l-lg text-xl w-3/4" type="text" placeholder="Coupon code">
-                            <button
+                            <input id="apply-coupon-field" class="p-4 rounded-l-lg text-xl w-3/4" type="text"
+                                placeholder="Coupon code">
+                            <button onclick="discountCalculation()" id="apply-coupon-btn"
                                 class="bg-[#E527B2] p-4 rounded-r-lg text-white text-xl font-semibold">Apply</button>
                         </div>
                     </div>
@@ -272,32 +273,29 @@
                     <!-- show product name by category  -->
                     <div class="rounded-lg bg-base-100 p-6 pb-16 shadow-2xl mt-6 z-30 relative">
                         <div id="category-one">
-                            <h3 class="text-2xl font-medium mb-4">1. Home Cooker</h3>
-                        </div>
-                        <div id="category-one">
-                            <h3 class="text-2xl font-medium mb-4">2. Sports cates</h3>
-                        </div>
-                        <div id="category-one">
-                            <h3 class="text-2xl font-medium mb-4">
-                                3. Home Cooker</h3>
+                            <ol id="product-list" class="text-2xl font-medium list-decimal ml-6 pb-8 leading-10">
+
+                            </ol>
                         </div>
                         <hr>
 
                         <!-- price calculation area  -->
                         <div class="py-5 pt-6">
                             <h3 class="text-2xl font-medium mb-4">Total price: <span class="text-slate-500"
-                                    id="totalPrice">257.00 TK</span>
+                                    id="totalPrice">0</span> <span class="text-slate-500">TK</span>
                             </h3>
                             <h3 class="text-2xl font-medium mb-4">Discount : <span class="text-slate-500"
-                                    id="totalPrice">51.40 TK</span></h3>
+                                    id="discountPrice">0</span> <span class="text-slate-500">TK</span>
+                            </h3>
                             <h3 class="text-2xl font-medium mb-4">Total : <span class="text-slate-500"
-                                    id="totalPrice">205.60 TK</span></h3>
+                                    id="total">0</span> <span class="text-slate-500">TK</span>
+                            </h3>
                         </div>
                         <hr>
 
                         <div width="360px" class="z-50 absolute -bottom-6 mx-auto">
-                            <button onclick="my_modal_1.showModal()"
-                                class="bg-[#E527B2] py-4 px-20 rounded text-white text-xl font-semibold">Make
+                            <button id="make-purchase-btn" onclick="my_modal_1.showModal()"
+                                class="bg-[#E527B2] py-4 px-20 rounded text-white text-xl font-semibold" disabled>Make
                                 Purchase</button>
                         </div>
                     </div>
@@ -306,6 +304,8 @@
             </div>
         </section>
     </main>
+
+
 
     <!-- Make purchase button modal  -->
     <dialog id="my_modal_1" class="modal p-10 text-center">
@@ -319,6 +319,8 @@
             </div>
         </div>
     </dialog>
+
+    <script src="./js/cart.js"></script>
 </body>
 
 </html>
